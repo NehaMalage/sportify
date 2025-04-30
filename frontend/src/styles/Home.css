@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f4ff, #fff0f6);
+  color: #333;
+}
+
+.home-container {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+  overflow: hidden;
+  align-items: center;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(240,244,255,0.9) 100%);
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.hero-image {
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  margin-left: 2rem;
+  z-index: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #4a90e2 0%, #2e5fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Explore Button */
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #4a90e2 0%, #2e5fff 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(46, 95, 255, 0.3);
+}
+
+.explore-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 95, 255, 0.4);
+}
+
+.btn-icon {
+  margin-left: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.explore-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Sports Icons Animation */
+.sports-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.icon-row {
+  position: absolute;
+  font-size: 4rem;
+  animation: floatIcons 20s linear infinite;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.icon-row:nth-child(1) { top: 20%; animation-delay: 0s; }
+.icon-row:nth-child(2) { top: 40%; animation-delay: -5s; }
+.icon-row:nth-child(3) { top: 60%; animation-delay: -10s; }
+.icon-row:nth-child(4) { top: 80%; animation-delay: -15s; }
+
+@keyframes floatIcons {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Benefits Section */
+.benefits-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.benefit-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-image {
+    display: none;
+  }
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.hero-title {
+  animation-delay: 0.2s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.4s;
+}
+
+.explore-btn {
+  animation-delay: 0.6s;
+}
+
+.benefit-card {
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: calc(var(--card-index) * 0.2s);
+}
